@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+:root {
+  --colore-primario: #eab308;
+  --colore-primario-hover: #facc15;
+  --sfondo: #0f2952;
+  --sfondo-auth: #1a0808;
+  --sfondo-card: #1a3a6e;
+  --sfondo-card-auth: #2a0f0f;
+  --sfondo-input: #1e3d73;
+  --bordo: #2a5aa0;
+  --bordo-auth: #7f1d1d;
+  --testo: #f1f5f9;
+  --testo-muted: #94a3b8;
+}
+
+body {
+  background-color: var(--sfondo);
+  color: var(--testo);
+  min-height: 100vh;
+}
