@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
-  import { PUBLIC_PRIVATE_TOKEN } from '$env/static/public';
+  import { PUBLIC_TOKEN } from '$env/static/public';
 
   const BASE_URL = 'http://127.0.0.1:8090';
 
@@ -25,7 +25,7 @@
   onMount(async () => {
     // Controlla il token
     const token = $page.url.searchParams.get('token');
-    if (token !== PUBLIC_PRIVATE_TOKEN) {
+    if (token !== PUBLIC_TOKEN) {
       authorized = false;
       loading = false;
       return;
