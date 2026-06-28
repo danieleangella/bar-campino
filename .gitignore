@@ -1,0 +1,12 @@
+# PocketBase
+backend/pocketbase
+backend/pb_data/
+
+# Node
+frontend/node_modules/
+frontend/.svelte-kit/
+frontend/build/
+
+# Ambiente
+.env
+.env.*
