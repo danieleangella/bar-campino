@@ -59,41 +59,43 @@
     {:else}
       <div class="flex flex-col gap-4">
         {#each events as event}
-          <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden">
+          <a href="/eventi/{event.id}">
+            <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden hover:border-stone-600 transition-colors cursor-pointer">
 
-            <!-- Locandina -->
-            {#if event.poster}
-              <img
-                src={`http://127.0.0.1:8090/api/files/${event.collectionId}/${event.id}/${event.poster}`}
-                alt={event.title}
-                class="w-full object-cover max-h-64"
-              />
-            {/if}
-
-            <div class="p-5">
-              <!-- Data -->
-              <p class="text-amber-400 text-sm font-medium uppercase tracking-wide mb-1">
-                {formatDate(event.date)}
-              </p>
-
-              <!-- Titolo -->
-              <h2 class="text-xl font-bold mb-1">{event.title}</h2>
-
-              <!-- Orario -->
-              {#if event.start_time}
-                <p class="text-stone-400 text-sm mb-3">
-                  🕐 {event.start_time}{event.end_time ? ' – ' + event.end_time : ''}
-                </p>
+              <!-- Locandina -->
+              {#if event.poster}
+                <img
+                  src={`http://127.0.0.1:8090/api/files/${event.collectionId}/${event.id}/${event.poster}`}
+                  alt={event.title}
+                  class="w-full object-cover max-h-64"
+                />
               {/if}
 
-              <!-- Descrizione -->
-              {#if event.description}
-                <p class="text-stone-300 text-sm leading-relaxed">
-                  {event.description}
+              <div class="p-5">
+                <!-- Data -->
+                <p class="text-amber-400 text-sm font-medium uppercase tracking-wide mb-1">
+                  {formatDate(event.date)}
                 </p>
-              {/if}
+
+                <!-- Titolo -->
+                <h2 class="text-xl font-bold mb-1">{event.title}</h2>
+
+                <!-- Orario -->
+                {#if event.start_time}
+                  <p class="text-stone-400 text-sm mb-3">
+                    🕐 {event.start_time}{event.end_time ? ' – ' + event.end_time : ''}
+                  </p>
+                {/if}
+
+                <!-- Descrizione -->
+                {#if event.description}
+                  <p class="text-stone-300 text-sm leading-relaxed">
+                    {event.description}
+                  </p>
+                {/if}
+              </div>
             </div>
-          </div>
+          </a>
         {/each}
       </div>
     {/if}
